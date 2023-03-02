@@ -14,7 +14,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name="mobilePhoneContracts")
-public class MobilePhoneContract {
+public class MobilePhoneContract extends Contract{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
