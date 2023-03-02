@@ -1,4 +1,4 @@
-package com.contractManager.contractsManager;
+package com.contractManager.contractsManager.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

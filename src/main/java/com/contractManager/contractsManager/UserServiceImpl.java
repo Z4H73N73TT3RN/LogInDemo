@@ -3,6 +3,11 @@ package com.contractManager.contractsManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.contractManager.contractsManager.repositories.Role;
+import com.contractManager.contractsManager.repositories.RoleRepository;
+import com.contractManager.contractsManager.repositories.User;
+import com.contractManager.contractsManager.repositories.UserRepository;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

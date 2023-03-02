@@ -7,6 +7,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.contractManager.contractsManager.repositories.Role;
+import com.contractManager.contractsManager.repositories.User;
+import com.contractManager.contractsManager.repositories.UserRepository;
+
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -31,7 +35,15 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("Invalid username or password.");
         }
     }
-
+    private static Collection<GrantedAuthority> mapRolesToAuthorities(
+            Collection<Role> roles
+    ) {
+        return roles.stream()
+                .map(role -> "ROLE_" + role.getName())
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+    }
+/*
     private Collection < ? extends GrantedAuthority> mapRolesToAuthorities(Collection <Role> roles) {
     	System.out.println("CustomUserDe... something is happening");
         Collection < ? extends GrantedAuthority> mapRoles = roles.stream()
@@ -39,5 +51,5 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .collect(Collectors.toList());
         System.out.println(mapRoles.toString());
         return mapRoles;
-    }
+    }//*/
 }
