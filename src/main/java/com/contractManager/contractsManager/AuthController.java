@@ -65,4 +65,13 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
+    
+    @GetMapping("/contracts")
+    public String listContracts(){
+    //public String listContracts(Model model){
+    	System.out.println("AutController - showing contracts");
+        //List<UserDto> users = userService.findAllUsers();
+        //model.addAttribute("users", users);
+        return "contracts";
+    }
 }
