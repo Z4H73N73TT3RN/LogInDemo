@@ -74,4 +74,34 @@ public class AuthController {
         //model.addAttribute("users", users);
         return "contracts";
     }
+    
+    @GetMapping("/addContract")
+    public String addNewContract(){
+    //public String listContracts(Model model){
+    	System.out.println("AutController - add contracts");
+        //List<UserDto> users = userService.findAllUsers();
+        //model.addAttribute("users", users);
+        return "addContract";
+    }
+    @PostMapping("/contract/save")
+    public String saveNewContract(){
+
+   // public String saveNewContract(@Valid @ModelAttribute("user") UserDto user,
+        //                       BindingResult result,
+       //                        Model model){
+    	/*
+        User existing = userService.findUserByEmail(user.getEmail());
+        if (existing != null) {
+            result.rejectValue("email", null, "There is already an account registered with that email");
+        }
+        if (result.hasErrors()) {
+        	System.out.println("register/save error");
+            model.addAttribute("user", user);
+            return "register";
+        }
+    	System.out.println("register/save");
+        userService.saveUser(user);*/
+    	System.out.println("contract/save");
+        return "redirect:/addContract?success";
+    }
 }
