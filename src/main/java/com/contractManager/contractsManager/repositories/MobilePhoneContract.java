@@ -19,12 +19,12 @@ public class MobilePhoneContract extends Contract{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column
-    private Integer contractPeriod;
+    //@Column
+    //private Integer contractPeriod;
     
     @Column
     private float price;
-    
+    /*
     @Column
     private String network;
     
@@ -39,5 +39,5 @@ public class MobilePhoneContract extends Contract{
     
     @Column
     private boolean messagingFlat;
-    
+    */
 }

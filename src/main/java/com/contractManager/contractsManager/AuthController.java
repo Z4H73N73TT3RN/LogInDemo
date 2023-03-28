@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.contractManager.contractsManager.repositories.MobilePhoneContract;
 import com.contractManager.contractsManager.repositories.User;
 
 import java.util.List;
@@ -76,15 +77,19 @@ public class AuthController {
     }
     
     @GetMapping("/addContract")
-    public String addNewContract(){
+    public String addNewContract(Model model){
     //public String listContracts(Model model){
     	System.out.println("AutController - add contracts");
         //List<UserDto> users = userService.findAllUsers();
         //model.addAttribute("users", users);
+        ContractDto contract = new ContractDto();
+        model.addAttribute("contract", contract);
+
         return "addContract";
     }
     @PostMapping("/contract/save")
     public String saveNewContract(){
+    //public String saveNewContract(@Valid @ModelAttribute("mobilePhoneContract") MobilePhoneContract mobilePhoneContract){
 
    // public String saveNewContract(@Valid @ModelAttribute("user") UserDto user,
         //                       BindingResult result,
