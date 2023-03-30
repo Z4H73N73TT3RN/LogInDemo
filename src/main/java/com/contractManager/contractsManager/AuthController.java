@@ -87,9 +87,11 @@ public class AuthController {
 
         return "addContract";
     }
-    @PostMapping("/contract/save")
-    public String saveNewContract(){
-    //public String saveNewContract(@Valid @ModelAttribute("mobilePhoneContract") MobilePhoneContract mobilePhoneContract){
+    @PostMapping("/addContract/save")
+    //public String saveNewContract(){
+    public String saveNewContract(@Valid @ModelAttribute("contract") ContractDto contract,
+                                   BindingResult result,
+    	                               Model model) {
 
    // public String saveNewContract(@Valid @ModelAttribute("user") UserDto user,
         //                       BindingResult result,
@@ -107,7 +109,7 @@ public class AuthController {
     	System.out.println("register/save");
         userService.saveUser(user);*/
     	System.out.println("contract/save");
-    	//System.out.println(model.toString());
+    	System.out.println(model.toString());
         return "redirect:/addContract?success";
     }
 }

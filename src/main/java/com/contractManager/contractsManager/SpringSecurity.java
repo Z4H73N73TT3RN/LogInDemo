@@ -36,7 +36,7 @@ public class SpringSecurity {
 		                		//.requestMatchers("/contracts").permitAll()
 		                		.requestMatchers("/users").hasRole("ADMIN")
 		                		.requestMatchers("/contracts").hasRole("ADMIN")
-		                		.requestMatchers("/addContract").hasRole("ADMIN")
+		                		.requestMatchers("/addContract/**").hasRole("ADMIN")
                         /*requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/index").permitAll()
                                 //.requestMatchers("/users").permitAll()
