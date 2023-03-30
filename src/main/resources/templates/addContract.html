@@ -48,15 +48,54 @@
                         </p>
                     </div>
                     <div class="form-group mb-3">
+                        <label class="form-label">Telephon Number</label>
+                        <input class="form-control"
+                               id="telephoneNumber"
+                               name="telephoneNumber"
+                               placeholder="Enter your telephon number of the current contract"
+                               th:field="*{telephoneNumber}"
+                               type="text"
+                        />
+                        <p th:errors="*{telephoneNumber}" class="text-danger"
+                           th:if="${#fields.hasErrors('telephoneNumber')}">
+                        </p>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label">Customer Number</label>
+                        <input class="form-control"
+                               id="customerNumber"
+                               name="customerNumber"
+                               placeholder="Enter your customer number of the current contract"
+                               th:field="*{customerNumber}"
+                               type="text"
+                        />
+                        <p th:errors="*{customerNumber}" class="text-danger"
+                           th:if="${#fields.hasErrors('customerNumber')}">
+                        </p>
+                    </div>
+<!--
+https://frontbackend.com/thymeleaf/spring-boot-bootstrap-thymeleaf-checkbox-tree
+https://frontbackend.com/thymeleaf/working-with-forms-in-thymeleaf
+  -->
+   <!-- <div>
+        <label>Select colors:</label>
+        <select th:field="*{colors}" multiple>
+            <option th:each="color : ${allSampleColors}"
+                    th:value="${color}"
+                    th:text="${color}">RED
+            </option>
+        </select>
+    </div>-->
+                    <div class="form-group mb-3">
                         <button class="btn btn-primary" type="submit">Save</button>
-                        <span>Already registered? <a href="/" th:href="@{/login}">Login
-                             here</a></span>
+                        <!-- <span>Already registered? <a href="/" th:href="@{/login}">Login
+                             here</a></span>-->
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
--->
+
 </body>
 </html>

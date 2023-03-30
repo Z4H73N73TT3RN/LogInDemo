@@ -24,6 +24,12 @@ public class MobilePhoneContract extends Contract{
     
     @Column
     private float price;
+    
+    @Column
+    private String telephoneNumber;
+    
+    @Column
+    private String customerNumber;
     /*
     @Column
     private String network;

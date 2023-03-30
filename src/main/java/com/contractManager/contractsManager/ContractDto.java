@@ -14,4 +14,8 @@ public class ContractDto {
     private Long id;
     @NotEmpty
     private Float price;
+    @NotEmpty
+    private String telephoneNumber;
+    @NotEmpty
+    private String customerNumber;
 }

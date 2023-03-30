@@ -107,6 +107,7 @@ public class AuthController {
     	System.out.println("register/save");
         userService.saveUser(user);*/
     	System.out.println("contract/save");
+    	//System.out.println(model.toString());
         return "redirect:/addContract?success";
     }
 }
